@@ -10,7 +10,4 @@ describe("application", () => {
   it("renders without crashing", () => {
     expect(wrapper).toBeDefined();
   });
-  it("renders Hello, World message", () => {
-    expect(wrapper.text()).toEqual("Hello, World")
-  })
 });
