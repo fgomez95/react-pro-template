@@ -13,6 +13,8 @@ import ChatInterface from "./ChatInterface";
 
 import { thunkSendMessage } from "./thunks";
 
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 interface AppProps {
   sendMessage: typeof sendMessage;
   updateSession: typeof updateSession;
@@ -59,15 +61,38 @@ class App extends React.Component<AppProps> {
 
   render() {
     return (
-      <div className="parent">
-        <ChatHistory messages={this.props.chat.messages} />
-        <ChatInterface
-          userName={this.props.system.userName}
-          message={this.state.message}
-          updateMessage={this.updateMessage}
-          sendMessage={this.sendMessage}
-        />
-      </div>
+      <Router>
+        <h1>App</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/chat">Chat</Link>
+            </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <div className="parent">
+          <Route
+            exact
+            path="/chat"
+            render={() => (
+              <div>
+                <ChatHistory messages={this.props.chat.messages} />
+                <ChatInterface
+                  userName={this.props.system.userName}
+                  message={this.state.message}
+                  updateMessage={this.updateMessage}
+                  sendMessage={this.sendMessage}
+                />
+              </div>
+            )}
+          />
+          <Route exact path="/" render={() => <div>Home</div>} />
+        </div>
+      </Router>
     );
   }
 }
