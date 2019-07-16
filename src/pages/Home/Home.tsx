@@ -3,7 +3,7 @@ import * as React from "react";
 function Home(): JSX.Element {
   return (
     <div>
-      <h3>Home</h3>
+      <h4>Home</h4>
     </div>
   );
 }

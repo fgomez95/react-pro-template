@@ -1,10 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Main from "./Main";
-import { MainProps } from "./Main";
 
 import "../test/setup";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { mount } from "enzyme";
 
 const wrapper = mount(

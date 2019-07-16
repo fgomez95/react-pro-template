@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Navigation from "./Navigation";
 import "../../../test/setup";
 import { BrowserRouter as Router, Link } from "react-router-dom";

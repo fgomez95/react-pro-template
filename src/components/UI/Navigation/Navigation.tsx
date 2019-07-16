@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 function Navigation(): JSX.Element {
   return (
     <aside>
-      <h2>Navigation</h2>
+      <h3>Navigation</h3>
       <nav>
         <ul>
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>
