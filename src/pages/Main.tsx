@@ -2,7 +2,7 @@ import * as React from "react";
 import { Route } from "react-router-dom";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
-import Dash from "./Dash/Dash";
+import Dashboard from "./Dashboard/Dashboard";
 import Navigation from "../components/UI/Navigation/Navigation";
 
 export interface MainProps {
