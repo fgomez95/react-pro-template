@@ -3,28 +3,23 @@ Use this component as a redux and
 react router wire
 */
 
-// Lib Import 
+// Lib Import
 import * as React from "react";
 import { connect } from "react-redux";
-import { BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 //Redux Import
 import { AppState } from "./store/index";
 
-// Component Import 
+// Component Import
 import Main from "./pages/Main";
-
-interface AppProps {}
-
 class App extends React.Component {
   render() {
-    return(
+    return (
       <Router>
-        <Main 
-          message={"hello"}
-        />
+        <Main />
       </Router>
-    )
+    );
   }
 }
 

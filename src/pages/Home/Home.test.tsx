@@ -2,9 +2,8 @@ import React from "react";
 import Home from "./Home";
 import "../../test/setup";
 import { BrowserRouter as Router } from "react-router-dom";
-import { shallow } from "enzyme";
-
-const wrapper = shallow(
+import { mount } from "enzyme";
+const wrapper = mount(
   <Router>
     <Home />
   </Router>
@@ -12,6 +11,6 @@ const wrapper = shallow(
 
 describe("Home", () => {
   it("can be exported correctly", () => {
-    expect(wrapper).toBeDefined();
+    expect(wrapper.find(Home)).toHaveLength(1);
   });
 });

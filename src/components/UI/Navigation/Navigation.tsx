@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 function Navigation(): JSX.Element {
   return (
-    <aside>
+    <div>
       <h3>Navigation</h3>
       <nav>
         <ul>
@@ -17,7 +17,7 @@ function Navigation(): JSX.Element {
           </li>
         </ul>
       </nav>
-    </aside>
+    </div>
   );
 }
 
