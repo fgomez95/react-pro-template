@@ -1,27 +1,30 @@
-/*
-Use this component as a redux and 
-react router wire
-*/
-
-// Lib Import
 import * as React from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-
-//Redux Import
-import { AppState } from "./store/index";
-
-// Component Import
+import { AppState } from "./store";
 import Main from "./pages/Main";
-class App extends React.Component {
+import { thunkLogin } from "./store/session/thunks";
+import { Session } from "./store/session/types";
+
+interface AppProps {
+  thunkLogin: any;
+  session: Session;
+}
+
+class App extends React.Component<AppProps> {
   render() {
     return (
       <Router>
-        <Main />
+        <Main {...this.props} />
       </Router>
     );
   }
 }
 
-const mapStateToProps = (state: AppState) => ({});
-export default connect(mapStateToProps)(App);
+const mapStateToProps = (state: AppState) => ({
+  session: state.session
+});
+export default connect(
+  mapStateToProps,
+  { thunkLogin }
+)(App);

@@ -11,9 +11,11 @@ interface Event {
   };
 }
 
+function mockAsyncLogin() {}
+
 const wrapper = mount(
   <Router>
-    <Login />
+    <Login asyncLogin={mockAsyncLogin} />
   </Router>
 );
 
