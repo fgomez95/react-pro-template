@@ -5,9 +5,9 @@ import Login from "./Login/Login";
 import Navigation from "../components/UI/Navigation/Navigation";
 import { Session } from "../store/session/types";
 
-interface MainProps {
-  thunkLogin: any;
-  session: Session;
+export interface MainProps {
+  thunkLogin?: any;
+  session?: Session;
 }
 
 const main = (props: MainProps): JSX.Element => {
